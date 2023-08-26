@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.ComponentModel.DataAnnotations;
 namespace BangazonBE.Models;
 
 public class UserPayment
@@ -9,4 +9,3 @@ public class UserPayment
     public int PaymentId { get; set; }
     public PaymentType PaymentType { get; set; }
 }
-
