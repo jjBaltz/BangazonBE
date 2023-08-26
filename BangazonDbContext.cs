@@ -21,7 +21,7 @@ public class BangazonBEDbContext : DbContext
     {
         modelBuilder.Entity<User>().HasData(new User[]
         {
-
+            new User {}
         });
         modelBuilder.Entity<Product>().HasData(new Product[]
         {
