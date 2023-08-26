@@ -1,10 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
 namespace BangazonBE.Models;
 
-public class PaymentType
+public class Category
 {
     public int Id { get; set; }
-    public string CardTypeName { get; set; }
-    public int CardNumber { get; set; }
+    public string Type { get; set; }
 }
 
