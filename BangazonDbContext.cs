@@ -6,9 +6,9 @@ public class BangazonBEDbContext : DbContext
     public DbSet<User> Users { get; set; }
     public DbSet<Product> Products { get; set; }
     public DbSet<Order> Orders { get; set; }
-    //public DbSet<OrderStatus> OrderStatuses { get; set; }
+    public DbSet<OrderStatus> OrderStatuses { get; set; }
     public DbSet<PaymentType> PaymentTypes { get; set; }
-    //public DbSet<UserPayment> UserPayments { get; set; }
+    public DbSet<UserPayment> UserPayments { get; set; }
     public DbSet<Category> Categories { get; set; }
 
 
@@ -65,10 +65,10 @@ public class BangazonBEDbContext : DbContext
         modelBuilder.Entity<Order>().HasData(new Order[]
         {
             new Order { OrderId = 601, UserId = 102, CreatedAt = DateTime.Now, StatusId = 1},
-            new Order { OrderId = 602, UserId = 102, CreatedAt = DateTime(2023, 8, 15), StatusId = 2},
-            new Order { OrderId = 603, UserId = 104, CreatedAt = DateTime(2023, 8, 22), StatusId = 4},
-            new Order { OrderId = 604, UserId = 104, CreatedAt = DateTime(2023, 7, 1), StatusId = 6},
-            new Order { OrderId = 605, UserId = 105, CreatedAt = DateTime(2023, 8, 16), StatusId = 5}
+            new Order { OrderId = 602, UserId = 102, CreatedAt = DateTime.Now, StatusId = 2},
+            new Order { OrderId = 603, UserId = 104, CreatedAt = DateTime.Now, StatusId = 4},
+            new Order { OrderId = 604, UserId = 104, CreatedAt = DateTime.Now, StatusId = 6},
+            new Order { OrderId = 605, UserId = 105, CreatedAt = DateTime.Now, StatusId = 5}
         });
         modelBuilder.Entity<OrderStatus>().HasData(new OrderStatus[]
         {
