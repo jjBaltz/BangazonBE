@@ -29,22 +29,22 @@ public class BangazonBEDbContext : DbContext
         });
         modelBuilder.Entity<UserPayment>().HasData(new UserPayment[]
         {
-            new UserPayment { UPId = 201, UserId = 101, PaymentId = 302},
-            new UserPayment { UPId = 202, UserId = 102, PaymentId = 303},
-            new UserPayment { UPId = 203, UserId = 103, PaymentId = 306},
-            new UserPayment { UPId = 204, UserId = 104, PaymentId = 308},
-            new UserPayment { UPId = 205, UserId = 105, PaymentId = 304}
+            new UserPayment { UserPaymentId = 201, UserId = 101, PaymentTypeId = 302},
+            new UserPayment { UserPaymentId = 202, UserId = 102, PaymentTypeId = 303},
+            new UserPayment { UserPaymentId = 203, UserId = 103, PaymentTypeId = 306},
+            new UserPayment { UserPaymentId = 204, UserId = 104, PaymentTypeId = 308},
+            new UserPayment { UserPaymentId = 205, UserId = 105, PaymentTypeId = 304}
         });
         modelBuilder.Entity<PaymentType>().HasData(new PaymentType[]
         {
-            new PaymentType { PaymentId = 301, CardTypeName = "Visa", CardNumber = 3526},
-            new PaymentType { PaymentId = 302, CardTypeName = "Visa", CardNumber = 2391},
-            new PaymentType { PaymentId = 303, CardTypeName = "Giftcard", CardNumber = 5364},
-            new PaymentType { PaymentId = 304, CardTypeName = "Discover", CardNumber = 3518},
-            new PaymentType { PaymentId = 305, CardTypeName = "Mastercard", CardNumber = 6952},
-            new PaymentType { PaymentId = 306, CardTypeName = "American Express", CardNumber = 2986},
-            new PaymentType { PaymentId = 307, CardTypeName = "Mastercard", CardNumber = 1628},
-            new PaymentType { PaymentId = 308, CardTypeName = "American Express", CardNumber = 4352}
+            new PaymentType { PaymentTypeId = 301, CardTypeName = "Visa", CardNumber = 3526},
+            new PaymentType { PaymentTypeId = 302, CardTypeName = "Visa", CardNumber = 2391},
+            new PaymentType { PaymentTypeId = 303, CardTypeName = "Giftcard", CardNumber = 5364},
+            new PaymentType { PaymentTypeId = 304, CardTypeName = "Discover", CardNumber = 3518},
+            new PaymentType { PaymentTypeId = 305, CardTypeName = "Mastercard", CardNumber = 6952},
+            new PaymentType { PaymentTypeId = 306, CardTypeName = "American Express", CardNumber = 2986},
+            new PaymentType { PaymentTypeId = 307, CardTypeName = "Mastercard", CardNumber = 1628},
+            new PaymentType { PaymentTypeId = 308, CardTypeName = "American Express", CardNumber = 4352}
         });
         modelBuilder.Entity<Product>().HasData(new Product[]
         {
@@ -56,27 +56,27 @@ public class BangazonBEDbContext : DbContext
         });
         modelBuilder.Entity<OrderProduct>().HasData(new OrderProduct[]
         {
-            new OrderProduct { OPId = 501, ProductId = 403, OrderId = 601},
-            new OrderProduct { OPId = 502, ProductId = 404, OrderId = 602},
-            new OrderProduct { OPId = 503, ProductId = 401, OrderId = 603},
-            new OrderProduct { OPId = 504, ProductId = 405, OrderId = 604},
-            new OrderProduct { OPId = 505, ProductId = 402, OrderId = 605}
+            new OrderProduct { OrderProductId = 501, ProductId = 403, OrderId = 601},
+            new OrderProduct { OrderProductId = 502, ProductId = 404, OrderId = 602},
+            new OrderProduct { OrderProductId = 503, ProductId = 401, OrderId = 603},
+            new OrderProduct { OrderProductId = 504, ProductId = 405, OrderId = 604},
+            new OrderProduct { OrderProductId= 505, ProductId = 402, OrderId = 605}
         });
         modelBuilder.Entity<Order>().HasData(new Order[]
         {
-            new Order { OrderId = 601, UserId = 102, CreatedAt = DateTime.Now, StatusId = 1},
-            new Order { OrderId = 602, UserId = 102, CreatedAt = DateTime.Now, StatusId = 2},
-            new Order { OrderId = 603, UserId = 104, CreatedAt = DateTime.Now, StatusId = 4},
-            new Order { OrderId = 604, UserId = 104, CreatedAt = DateTime.Now, StatusId = 6},
-            new Order { OrderId = 605, UserId = 105, CreatedAt = DateTime.Now, StatusId = 5}
+            new Order { OrderId = 601, UserId = 102, CreatedAt = DateTime.Now, OrderStatusId = 1},
+            new Order { OrderId = 602, UserId = 102, CreatedAt = DateTime.Now, OrderStatusId = 2},
+            new Order { OrderId = 603, UserId = 104, CreatedAt = DateTime.Now, OrderStatusId = 4},
+            new Order { OrderId = 604, UserId = 104, CreatedAt = DateTime.Now, OrderStatusId = 6},
+            new Order { OrderId = 605, UserId = 105, CreatedAt = DateTime.Now, OrderStatusId = 5}
         });
         modelBuilder.Entity<OrderStatus>().HasData(new OrderStatus[]
         {
-            new OrderStatus { StatusId = 1, Status = "Pending"},
-            new OrderStatus { StatusId = 2, Status = "In Progress"},
-            new OrderStatus { StatusId = 4, Status = "Completed"},
-            new OrderStatus { StatusId = 5, Status = "Shipped"},
-            new OrderStatus { StatusId = 6, Status = "Delivered"}
+            new OrderStatus { OrderStatusId = 1, Status = "Pending"},
+            new OrderStatus { OrderStatusId = 2, Status = "In Progress"},
+            new OrderStatus { OrderStatusId = 4, Status = "Completed"},
+            new OrderStatus { OrderStatusId = 5, Status = "Shipped"},
+            new OrderStatus { OrderStatusId = 6, Status = "Delivered"}
         });
         modelBuilder.Entity<Category>().HasData(new Category[]
         {

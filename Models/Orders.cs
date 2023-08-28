@@ -7,6 +7,6 @@ public class Order
     public int UserId { get; set; }
     public User User { get; set; }
     public DateTime CreatedAt { get; set; }
-    public int StatusId { get; set; }
+    public int OrderStatusId { get; set; }
     public OrderStatus OrderStatus { get; set; }
 }

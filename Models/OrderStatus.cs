@@ -3,7 +3,7 @@ namespace BangazonBE.Models;
 
 public class OrderStatus
 {
-    public int StatusId { get; set; }
+    public int OrderStatusId { get; set; }
     public string Status { get; set; }
 }
 
