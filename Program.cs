@@ -33,5 +33,49 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+//PRODUCTS
+app.MapGet("/api/products", (BangazonBEDbContext db) =>
+{
+    return db.Products.ToList();
+});
+
+app.MapPost("/api/products", (BangazonBEDbContext db, Product product) =>
+{
+    db.Products.Add(product);
+    db.SaveChanges();
+    return Results.Created($"/api/products/{product.ProductId}", product);
+});
+
+app.MapDelete("/api/products/{id}", (BangazonBEDbContext db, int id) =>
+{
+    Product product = db.Products.SingleOrDefault(product => product.ProductId == id);
+    if (product == null)
+    {
+        return Results.NotFound();
+    }
+    db.Products.Remove(product);
+    db.SaveChanges();
+    return Results.NoContent();
+
+});
+
+app.MapPut("/api/products/{id}", (BangazonBEDbContext db, int id, Product product) =>
+{
+    Product productToUpdate = db.Products.SingleOrDefault(product => product.ProductId == id);
+    if (productToUpdate == null)
+    {
+        return Results.NotFound();
+    }
+    productToUpdate.Name = product.Name;
+    productToUpdate.Description = product.Description;
+    productToUpdate.ProductPrice = product.ProductPrice;
+    productToUpdate.Quantity = product.Quantity;
+    productToUpdate.UserId = product.UserId;
+    productToUpdate.CategoryId = product.CategoryId;
+
+    db.SaveChanges();
+    return Results.NoContent();
+});
+
 app.Run();
 
