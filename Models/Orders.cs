@@ -9,4 +9,5 @@ public class Order
     public DateTime CreatedAt { get; set; }
     public int OrderStatusId { get; set; }
     public OrderStatus OrderStatus { get; set; }
+    public OrderProduct OrderProduct { get; set; }
 }

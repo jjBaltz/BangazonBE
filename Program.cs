@@ -39,6 +39,11 @@ app.MapGet("/api/products", (BangazonBEDbContext db) =>
     return db.Products.ToList();
 });
 
+app.MapGet("/api/products/{id}", (BangazonBEDbContext db, int id) =>
+{
+    return db.Products.Single(p => p.ProductId == id);
+});
+
 app.MapPost("/api/products", (BangazonBEDbContext db, Product product) =>
 {
     db.Products.Add(product);
@@ -75,6 +80,23 @@ app.MapPut("/api/products/{id}", (BangazonBEDbContext db, int id, Product produc
 
     db.SaveChanges();
     return Results.NoContent();
+});
+
+//ORDERS
+app.MapGet("/api/orders", (BangazonBEDbContext db) =>
+{
+    return db.Orders
+        .Include(o => o.OrderProduct)
+        .ThenInclude(op => op.Product)
+        .ToList();
+});
+
+app.MapGet("/api/orders/{id}", (BangazonBEDbContext db, int id) =>
+{
+    return db.Orders
+        .Include(o => o.OrderProduct)
+        .ThenInclude(op => op.Product)
+        .Single(o => o.OrderId == id);
 });
 
 app.Run();
