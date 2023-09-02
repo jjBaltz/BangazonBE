@@ -99,5 +99,37 @@ app.MapGet("/api/orders/{id}", (BangazonBEDbContext db, int id) =>
         .Single(o => o.OrderId == id);
 });
 
+app.MapPost("/api/orders", (BangazonBEDbContext db, Order order) =>
+{
+    db.Orders.Add(order);
+    db.SaveChanges();
+    return Results.Created($"/api/orders/{order.OrderId}", order);
+});
+
+app.MapDelete("/api/orders/{id}", (BangazonBEDbContext db, int id) =>
+{
+    Order order = db.Orders.SingleOrDefault(order => order.OrderId == id);
+    if (order == null)
+    {
+        return Results.NotFound();
+    }
+    db.Orders.Remove(order);
+    db.SaveChanges();
+    return Results.NoContent();
+
+});
+
+//CATEGORIES
+app.MapGet("/api/categories", (BangazonBEDbContext db) =>
+{
+    return db.Categories.ToList();
+});
+
+//USERS
+app.MapGet("api/users/{id}/closed", (BangazonBEDbContext db, int id) =>
+{
+
+});
+
 app.Run();
 

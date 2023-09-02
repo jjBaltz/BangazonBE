@@ -35,7 +35,7 @@ namespace BangazonBE.Migrations
 
                     b.HasKey("CategoryId");
 
-                    b.ToTable("Categories");
+                    b.ToTable("Categories", (string)null);
 
                     b.HasData(
                         new
@@ -88,7 +88,7 @@ namespace BangazonBE.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Orders");
+                    b.ToTable("Orders", (string)null);
 
                     b.HasData(
                         new
@@ -144,7 +144,7 @@ namespace BangazonBE.Migrations
 
                     b.HasKey("OrderProductId");
 
-                    b.ToTable("OrderProduct");
+                    b.ToTable("OrderProduct", (string)null);
 
                     b.HasData(
                         new
@@ -193,7 +193,7 @@ namespace BangazonBE.Migrations
 
                     b.HasKey("OrderStatusId");
 
-                    b.ToTable("OrderStatuses");
+                    b.ToTable("OrderStatuses", (string)null);
 
                     b.HasData(
                         new
@@ -245,7 +245,7 @@ namespace BangazonBE.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("PaymentTypes");
+                    b.ToTable("PaymentTypes", (string)null);
 
                     b.HasData(
                         new
@@ -328,7 +328,7 @@ namespace BangazonBE.Migrations
 
                     b.HasKey("ProductId");
 
-                    b.ToTable("Products");
+                    b.ToTable("Products", (string)null);
 
                     b.HasData(
                         new
@@ -412,7 +412,7 @@ namespace BangazonBE.Migrations
 
                     b.HasKey("UserId");
 
-                    b.ToTable("Users");
+                    b.ToTable("Users", (string)null);
 
                     b.HasData(
                         new
@@ -482,7 +482,7 @@ namespace BangazonBE.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("UserPayments");
+                    b.ToTable("UserPayments", (string)null);
 
                     b.HasData(
                         new
