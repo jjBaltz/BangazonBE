@@ -65,10 +65,10 @@ public class BangazonBEDbContext : DbContext
         modelBuilder.Entity<Order>().HasData(new Order[]
         {
             new Order { OrderId = 601, UserId = 102, CreatedAt = DateTime.Now, OrderStatusId = 1},
-            new Order { OrderId = 602, UserId = 102, CreatedAt = DateTime.Now, OrderStatusId = 2},
-            new Order { OrderId = 603, UserId = 104, CreatedAt = DateTime.Now, OrderStatusId = 4},
-            new Order { OrderId = 604, UserId = 104, CreatedAt = DateTime.Now, OrderStatusId = 6},
-            new Order { OrderId = 605, UserId = 105, CreatedAt = DateTime.Now, OrderStatusId = 5}
+            new Order { OrderId = 602, UserId = 102, CreatedAt = DateTime.Now, OrderStatusId = 4},
+            new Order { OrderId = 603, UserId = 104, CreatedAt = DateTime.Now, OrderStatusId = 3},
+            new Order { OrderId = 604, UserId = 104, CreatedAt = DateTime.Now, OrderStatusId = 2},
+            new Order { OrderId = 605, UserId = 105, CreatedAt = DateTime.Now, OrderStatusId = 6}
         });
         modelBuilder.Entity<OrderStatus>().HasData(new OrderStatus[]
         {
