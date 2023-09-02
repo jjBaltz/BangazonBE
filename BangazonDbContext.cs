@@ -72,8 +72,9 @@ public class BangazonBEDbContext : DbContext
         });
         modelBuilder.Entity<OrderStatus>().HasData(new OrderStatus[]
         {
-            new OrderStatus { OrderStatusId = 1, Status = "Pending"},
-            new OrderStatus { OrderStatusId = 2, Status = "In Progress"},
+            new OrderStatus { OrderStatusId = 1, Status = "Open"},
+            new OrderStatus { OrderStatusId = 2, Status = "Pending"},
+            new OrderStatus { OrderStatusId = 3, Status = "In Progress"},
             new OrderStatus { OrderStatusId = 4, Status = "Completed"},
             new OrderStatus { OrderStatusId = 5, Status = "Shipped"},
             new OrderStatus { OrderStatusId = 6, Status = "Delivered"}

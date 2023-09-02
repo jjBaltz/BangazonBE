@@ -126,10 +126,10 @@ app.MapGet("/api/categories", (BangazonBEDbContext db) =>
 });
 
 //USERS
-app.MapGet("api/users/{id}/closed", (BangazonBEDbContext db, int id) =>
-{
+//app.MapGet("api/users/{id}/closed", (BangazonBEDbContext db, int id) =>
+//{
 
-});
+//});
 
 app.Run();
 
