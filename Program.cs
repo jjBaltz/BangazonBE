@@ -116,7 +116,6 @@ app.MapDelete("/api/orders/{id}", (BangazonBEDbContext db, int id) =>
     db.Orders.Remove(order);
     db.SaveChanges();
     return Results.NoContent();
-
 });
 
 //CATEGORIES
@@ -126,10 +125,10 @@ app.MapGet("/api/categories", (BangazonBEDbContext db) =>
 });
 
 //USERS
-//app.MapGet("api/users/{id}/closed", (BangazonBEDbContext db, int id) =>
-//{
-
-//});
+app.MapGet("/api/users/isseller", (BangazonBEDbContext db, bool IsSeller) =>
+{
+    return db.Users.Where(u => u.IsSeller).ToList();
+});
 
 app.Run();
 
